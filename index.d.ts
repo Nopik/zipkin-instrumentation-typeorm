@@ -5,6 +5,7 @@ export interface TraceInfo {
     tracer: zipkin.Tracer | false;
     serviceName?: string;
     port?: number;
+		annotateResponse?: boolean;
     remoteService?: {
         serviceName?: string;
         host?: string;
