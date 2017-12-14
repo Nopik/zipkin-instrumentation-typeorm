@@ -66,7 +66,7 @@ export class TypeOrmInstrumentation {
                                 tracer.recordRpc(`db(${queryBuilder.getMainTableName()})`);
                                 tracer.recordBinary('db_sql', queryBuilder['getSql']());
                                 tracer.recordAnnotation(new zipkin.Annotation.ClientSend());
-                                tracer.recordAnnotation(new zipkin.Annotation.LocalAddr({port}));
+                                // tracer.recordAnnotation(new zipkin.Annotation.LocalAddr({port}));
 
                                 if (traceId.flags !== 0 && traceId.flags != null) {
                                     tracer.recordBinary(zipkin.HttpHeaders.Flags, traceId.flags.toString());
